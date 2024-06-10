@@ -1,5 +1,6 @@
 package mk.com.currencyconverter.ui.profile
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -21,6 +22,7 @@ import mk.com.currencyconverter.databinding.FragmentProfileBinding
 import mk.com.currencyconverter.db.DataManager
 import mk.com.currencyconverter.db.Language
 import mk.com.currencyconverter.db.LanguageItem
+import mk.com.currencyconverter.ui.LoginActivity
 import mk.com.currencyconverter.util.IntentKeys
 
 class ProfileFragment : Fragment() {
@@ -76,6 +78,13 @@ class ProfileFragment : Fragment() {
 
         if (user != null && user.email != null) {
             binding.email.text = user.email
+        }
+
+        binding.logoutButton.setOnClickListener {
+            FirebaseAuth.getInstance().signOut()
+            val intent = Intent(requireContext(), LoginActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+            startActivity(intent)
         }
     }
 

@@ -14,7 +14,7 @@
 
     <string name="default_web_client_id" translatable="false">200707350637-hhjchs4giednegct462fd8u4bgturtmd.apps.googleusercontent.com</string>
 
-    <string name="login_button">Login</string>
+    <string name="login_button">Log In</string>
     <string name="google_button" translatable="false">Google</string>
     <string name="facebook_button" translatable="false">Facebook</string>
     <string name="anonymous">Anonymous</string>
@@ -25,4 +25,6 @@
 
     <string name="flag_image_description" translatable="false">Flag</string>
     <string name="language" translatable="true">Language</string>
+
+    <string name="logout" translatable="true">Log Out</string>
 </resources>

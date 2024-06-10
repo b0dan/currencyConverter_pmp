@@ -12,4 +12,5 @@
     <string name="title_history">Историја</string>
     <string name="title_profile">Профил</string>
     <string name="convert_button">Пресметај</string>
+    <string name="logout">Одјави се</string>
 </resources>
