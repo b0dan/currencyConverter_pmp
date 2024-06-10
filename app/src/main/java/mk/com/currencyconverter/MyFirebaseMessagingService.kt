@@ -1,6 +1,5 @@
 package mk.com.currencyconverter
 
-import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
@@ -38,7 +37,6 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
     override fun onNewToken(token: String) {
         super.onNewToken(token)
         Log.d(TAG, "New Token: $token")
-        // Handle token update (send to server if necessary)
     }
 
     private fun showNotification(context: Context, title: String, message: String) {

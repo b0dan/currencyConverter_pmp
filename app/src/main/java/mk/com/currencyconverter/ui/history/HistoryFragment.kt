@@ -4,31 +4,23 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
-import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
 import mk.com.currencyconverter.R
 import mk.com.currencyconverter.adapter.HistoryAdapter
 import mk.com.currencyconverter.databinding.FragmentHistoryBinding
-import mk.com.currencyconverter.databinding.FragmentHomeBinding
 import mk.com.currencyconverter.db.History
 import mk.com.currencyconverter.db.HistoryDatabase
 import mk.com.currencyconverter.db.HistoryRepository
-import kotlin.math.truncate
 
 class HistoryFragment : Fragment() {
 
     private var _binding: FragmentHistoryBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     private lateinit var dataList: ArrayList<History>
@@ -78,6 +70,7 @@ class HistoryFragment : Fragment() {
         }
 
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

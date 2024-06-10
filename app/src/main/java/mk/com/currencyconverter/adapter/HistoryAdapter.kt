@@ -3,7 +3,6 @@ package mk.com.currencyconverter.adapter
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import mk.com.currencyconverter.R

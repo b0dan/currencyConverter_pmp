@@ -28,7 +28,7 @@ class ApiManager: ApiService {
             val response = apiService.getLatestCurrencies()
             println("getLatestCurrencies code: ${response.code()}")
             response
-        }catch (e: Exception) {
+        } catch (e: Exception) {
             println("Exception: ${e.message}")
             Response.error(860, "".toResponseBody("application/json".toMediaTypeOrNull()))
         }
