@@ -89,15 +89,27 @@ class LoginActivity : AppCompatActivity() {
             val email = binding.loginEmailEditText.text.toString()
             val pass = binding.loginPasswordEditText.text.toString()
             if (email.isNotEmpty() && pass.isNotEmpty()) {
-                firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener {
-                    if (it.isSuccessful) {
+                signInOrCreateUser(email, pass)
+            } else {
+                Toast.makeText(this, "Empty fields are not allowed!", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun signInOrCreateUser(email: String, pass: String) {
+        firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener { task ->
+            if (task.isSuccessful) {
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
+            } else {
+                firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener { createTask ->
+                    if (createTask.isSuccessful) {
                         startActivity(Intent(this, MainActivity::class.java))
+                        finish()
                     } else {
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, createTask.exception?.message, Toast.LENGTH_SHORT).show()
                     }
                 }
-            } else {
-                Toast.makeText(this, "Empty Fields Are not Allowed !!", Toast.LENGTH_SHORT).show()
             }
         }
     }
