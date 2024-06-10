@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Currency converter</string>
+    <string name="app_name">Currency Converter</string>
     <string name="title_home">Home</string>
     <string name="title_history">History</string>
     <string name="title_profile">Profile</string>

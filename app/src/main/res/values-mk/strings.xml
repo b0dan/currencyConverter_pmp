@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Currency converter</string>
+    <string name="app_name">Currency Converter</string>
     <string name="title_home">Дома</string>
     <string name="value">Вредност</string>
     <string name="currency">Валута</string>
